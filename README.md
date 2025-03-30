@@ -1,87 +1,85 @@
-# Clean Nuxt + Sanity app
+# Personal Portfolio - Nuxt & Sanity
 
-This template includes a [Nuxt](https://nuxt.com/) app with a [Sanity Studio](https://www.sanity.io/) – an open-source React application that connects to your Sanity project’s hosted dataset. The Studio is configured locally and can then be deployed for content collaboration.
+A modern personal portfolio site built with Nuxt.js and Sanity headless CMS.
+
+## Overview
+
+This project serves as my personal portfolio, showcasing my projects, skills, and professional experience. I chose the combination of Nuxt.js and Sanity for:
+
+- **Content Management**: Sanity provides a flexible, structured approach to managing portfolio content
+- **Developer Experience**: Nuxt's Vue-based framework offers excellent tooling and performance
+- **Learning Opportunity**: Exploring this tech stack allowed me to expand my skillset
+- **Completeness**: The combination enables a fully-featured portfolio with minimal compromise
+
+## Tech Stack
+
+- **Frontend**: Nuxt.js (Vue-based framework)
+- **Content Management**: Sanity CMS
+- **Styling**: Tailwind CSS
+- **Query Language**: GROQ (Graph-Relational Object Queries)
+- **Deployment**: Vercel
 
 ## Features
 
-* Fetch content seamlessly with [Sanity Content Lake](https://www.sanity.io/docs/datastore).
-* Render beautiful block content using [Portable Text](https://www.sanity.io/docs/presenting-block-text).
-* Manage and create content with the intuitive [Sanity Studio](https://www.sanity.io/docs/sanity-studio).
-* Live visual editing through [Sanity's Presentation tools](https://www.sanity.io/docs/presentation).
-* Advanced image cropping and rendering via [Sanity Image URLs](https://www.sanity.io/docs/image-url).
+- Responsive design
+- Dark/light mode support
+- Project showcase with images and details
+- Content fully managed through Sanity Studio
+- Optimized image loading via Sanity's image pipeline
 
-## Demo
+## Repository Structure
 
-https://sanity-template-nuxt-clean.sanity.build
+- `/nuxt-app` - Nuxt.js frontend application
+- `/sanity` - Sanity Studio configuration and schemas
+- `/public` - Static assets (including favicon)
 
 ## Getting Started
 
-### Installing the template
+### Prerequisites
 
-#### 1. Initialize template with Sanity CLI
+- Node.js (v16+)
+- npm or yarn
 
-Run the command in your Terminal to initialize this template on your local computer.
+### Installation
 
-See the documentation if you are [having issues with the CLI](https://www.sanity.io/help/cli-errors).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Gabrielb102/portfolio.git
+   cd portfolio
+   ```
 
-```shell
-npm create sanity@latest -- --template sanity-io/sanity-template-nuxt-clean
-```
+2. Install dependencies:
+   ```bash
+   # Frontend
+   cd nuxt-app
+   npm install
+   
+   # Sanity Studio
+   cd ../sanity
+   npm install
+   ```
 
-#### 2. Run the application and Sanity Studio
+3. Setup environment variables:
+   Create `.env` files based on `.env.example` templates
 
-Navigate to the template directory using `cd <your app name>`, and start the development servers by running the following command
+### Development
 
-```shell
+Run the Nuxt application:
+```bash
+cd nuxt-app
 npm run dev
 ```
 
-#### 3. Open the app and sign in to the Studio
-
-Open the Nuxt app running locally in your browser on [http://localhost:3000](http://localhost:3000).
-
-Open the Studio running locally in your browser on [http://localhost:3333](http://localhost:3333). You should now see a screen prompting you to log in to the Studio. Use the same service (Google, GitHub, or email) that you used when you logged in to the CLI.
-
-### Adding content with Sanity
-
-#### 1. Publish your first document
-The template comes pre-defined with a schema containing a `Post` document type.
-
-From the Studio, click "+ Create" and select the `Post` document type. Go ahead and create and publish the document.
-
-Your content should now appear in your Nuxt app ([http://localhost:3000](http://localhost:3000)) as well as in the Studio on the "Presentation" Tab
-
-#### 2. Extending the Sanity schema
-The schema for the `Post` document type is defined in the `studio/src/schemaTypes/post.ts` file. You can [add more document types](https://www.sanity.io/docs/schema-types) to the schema to suit your needs.
-
-### Deploying your application and inviting editors
-
-#### 1. Deploy Sanity Studio
-Your Nuxt frontend (`/nuxt-app`) and Sanity Studio (`/studio`) are still only running on your local computer. It's time to deploy and get it into the hands of other content editors.
-
-Back in your Studio directory (`/studio`), run the following command to deploy your Sanity Studio.
-
-```shell
-npx sanity deploy
+Run Sanity Studio:
+```bash
+cd sanity
+npm run dev
 ```
 
-#### 2. Deploy Nuxt app to Vercel
+## Deployment
 
-You have the freedom to deploy your Nuxt app to your hosting provider of choice. With Vercel and GitHub being a popular choice, we'll cover the basics of that approach.
+The site is configured for deployment on Vercel.
 
-1. Create a GitHub repository from this project. [Learn more](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
-2. Create a new Vercel project and connect it to your Github repository.
-3. Set the `Root Directory` to your Nuxt app.
-4. Configure your Environment Variables.
+## License
 
-#### 3. Invite a collaborator
-Now that you’ve deployed your Nuxt application and Sanity Studio, you can optionally invite a collaborator to your Studio. Open up [Manage](https://www.sanity.io/manage), select your project and click "Invite project members"
-
-They will be able to access the deployed Studio, where you can collaborate together on creating content.
-
-
-## Resources
-- [Sanity documentation](https://www.sanity.io/docs)
-- [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction)
-- [Join the Sanity Community](https://slack.sanity.io)
-- [Learn Sanity](https://www.sanity.io/learn)
+[MIT](LICENSE)
