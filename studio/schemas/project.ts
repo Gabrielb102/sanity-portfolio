@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'project',
+  title: 'Project',
   type: 'document',
   fields: [
     defineField({
@@ -39,6 +39,16 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'walkthroughVideo',
+      title: 'Walkthrough Video',
+      type: 'url',
+    }),
+    defineField({
+      name: 'liveLink',
+      title: 'Link to Live Site',
+      type: 'url',
+    })
   ],
   preview: {
     select: {

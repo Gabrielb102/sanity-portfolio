@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+    overscroll-behavior: none;
+    overflow-x: hidden;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+#__nuxt {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+

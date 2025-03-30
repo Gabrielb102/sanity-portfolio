@@ -1,20 +1,31 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxtjs/sanity',
-    [
-      '@nuxtjs/google-fonts',
-      {
-        families: {
-          'IBM Plex Mono': [500, 700],
-          Inter: [500, 700, 800],
-          'PT Serif': [400, 700],
-          download: true,
-          inject: true,
-        },
+
+  compatibilityDate: '2024-12-17',
+
+  css: ['~/assets/index.css'],
+
+  modules: ['@nuxtjs/sanity', [
+    '@nuxtjs/google-fonts',
+    {
+      families: {
+        'IBM Plex Mono': [500, 700],
+        Inter: [500, 700, 800],
+        'PT Serif': [400, 700],
+        download: true,
+        inject: true,
       },
-    ],
-  ],
+    },
+  ], '@nuxtjs/tailwindcss', 'shadcn-nuxt'],
+
+  shadcn: {
+    prefix: '',
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: './components/ui',
+  },
 
   sanity: {
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
@@ -35,5 +46,4 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-12-17',
 })
